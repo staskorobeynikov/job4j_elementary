@@ -26,9 +26,10 @@ public class Machine {
         while (delta > 0) {
             if (coins[k] > delta) {
                 k++;
+            } else {
+                rsl[size++] = coins[k];
+                delta -= coins[k];
             }
-            rsl[size++] = coins[k];
-            delta -= coins[k];
         }
         return Arrays.copyOf(rsl, size);
     }
