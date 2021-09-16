@@ -52,8 +52,8 @@ public class Cinema {
                 return false;
             }
             Place place = (Place) o;
-            return row == place.row &&
-                    cell == place.cell;
+            return row == place.row
+                    && cell == place.cell;
         }
 
         @Override
