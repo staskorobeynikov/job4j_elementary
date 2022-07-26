@@ -1,7 +1,7 @@
 package ru.job4j.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SquareTest {
     @Test
@@ -9,6 +9,6 @@ public class SquareTest {
         int bound = 3;
         int[] result = Square.calculate(bound);
         int[] expected = new int[] {0, 1, 4};
-        Assert.assertArrayEquals(expected, result);
+        assertThat(result).containsExactly(expected);
     }
 }

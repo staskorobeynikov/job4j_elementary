@@ -1,7 +1,7 @@
 package ru.job4j.condition;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class DummyBotTest {
     @Test
@@ -9,7 +9,7 @@ public class DummyBotTest {
         String in = "Привет, Бот.";
         String result = DummyBot.answer(in);
         String expected = "Привет, умник.";
-        Assert.assertEquals(expected, result);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -17,7 +17,7 @@ public class DummyBotTest {
         String in = "Пока.";
         String result = DummyBot.answer(in);
         String expected = "До скорой встречи.";
-        Assert.assertEquals(expected, result);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -25,6 +25,6 @@ public class DummyBotTest {
         String in = "Сколько будет 2 + 2?";
         String result = DummyBot.answer(in);
         String expected = "Это ставит меня в тупик. Задайте другой вопрос.";
-        Assert.assertEquals(expected, result);
+        assertThat(result).isEqualTo(expected);
     }
 }
