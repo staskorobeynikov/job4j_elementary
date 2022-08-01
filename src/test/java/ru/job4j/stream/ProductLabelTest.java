@@ -1,12 +1,11 @@
 package ru.job4j.stream;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProductLabelTest {
     @Test
@@ -27,6 +26,6 @@ public class ProductLabelTest {
         ProductLabel generator = new ProductLabel();
         List<String> strings = generator.generateLabels(products);
         List<String> expected = Arrays.asList(one.toString(), two.toString(), three.toString(), four.toString());
-        assertThat(strings, is(expected));
+        assertThat(strings).containsAll(expected);
     }
 }
