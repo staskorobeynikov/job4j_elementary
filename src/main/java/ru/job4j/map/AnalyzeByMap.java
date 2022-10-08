@@ -31,8 +31,11 @@ public class AnalyzeByMap {
         Map<String, Integer> temp = new LinkedHashMap<>();
         for (Pupil p : pupils) {
             for (Subject s : p.subjects()) {
+                temp.merge(s.name(), s.score(), Integer::sum);
+                /*
                 temp.computeIfPresent(s.name(), (key, value) -> value + s.score());
                 temp.putIfAbsent(s.name(), s.score());
+                 */
                 /*
                 Integer score = temp.get(s.name());
                 if (score != null) {
@@ -68,8 +71,11 @@ public class AnalyzeByMap {
         Map<String, Integer> temp = new LinkedHashMap<>();
         for (Pupil p : pupils) {
             for (Subject s : p.subjects()) {
+                temp.merge(s.name(), s.score(), Integer::sum);
+                /*
                 temp.computeIfPresent(s.name(), (key, value) -> value + s.score());
                 temp.putIfAbsent(s.name(), s.score());
+                */
                 /*
                 Integer score = temp.get(s.name());
                 if (score != null) {
