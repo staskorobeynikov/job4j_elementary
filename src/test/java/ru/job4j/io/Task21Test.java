@@ -17,11 +17,11 @@ class Task21Test {
         System.setIn(in);
         Task21.main(null);
         String expected =
-                "*****" + System.lineSeparator() +
-                        " * *" + System.lineSeparator() +
-                        "  *" + System.lineSeparator() +
-                        " * *" + System.lineSeparator() +
-                        "*****";
+                "*****" + System.lineSeparator()
+                        + " * *" + System.lineSeparator()
+                        + "  *" + System.lineSeparator()
+                        + " * *" + System.lineSeparator()
+                        + "*****";
         assertThat(out.toString()).isEqualTo(expected);
     }
 
@@ -33,14 +33,14 @@ class Task21Test {
         System.setIn(in);
         Task21.main(null);
         String expected =
-                "********" + System.lineSeparator() +
-                        " *    *" + System.lineSeparator() +
-                        "  *  *" + System.lineSeparator() +
-                        "   **" + System.lineSeparator() +
-                        "   **" + System.lineSeparator() +
-                        "  *  *" + System.lineSeparator() +
-                        " *    *" + System.lineSeparator() +
-                        "********";
+                "********" + System.lineSeparator()
+                        + " *    *" + System.lineSeparator()
+                        + "  *  *" + System.lineSeparator()
+                        + "   **" + System.lineSeparator()
+                        + "   **" + System.lineSeparator()
+                        + "  *  *" + System.lineSeparator()
+                        + " *    *" + System.lineSeparator()
+                        + "********";
         assertThat(out.toString()).isEqualTo(expected);
     }
 
@@ -52,14 +52,14 @@ class Task21Test {
         System.setIn(in);
         Task21.main(null);
         String expected =
-                "********" + System.lineSeparator() +
-                        " *    *" + System.lineSeparator() +
-                        "  *  *" + System.lineSeparator() +
-                        "   **" + System.lineSeparator() +
-                        "   **" + System.lineSeparator() +
-                        "  *  *" + System.lineSeparator() +
-                        " *    *" + System.lineSeparator() +
-                        "********";
+                "********" + System.lineSeparator()
+                        + " *    *" + System.lineSeparator()
+                        + "  *  *" + System.lineSeparator()
+                        + "   **" + System.lineSeparator()
+                        + "   **" + System.lineSeparator()
+                        + "  *  *" + System.lineSeparator()
+                        + " *    *" + System.lineSeparator()
+                        + "********";
         assertThat(out.toString()).isEqualTo(expected);
     }
 }
