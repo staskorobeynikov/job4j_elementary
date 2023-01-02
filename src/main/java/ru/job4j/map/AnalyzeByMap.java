@@ -45,6 +45,10 @@ public class AnalyzeByMap {
                 }
                 temp.put(s.name(), score);
                  */
+                /*
+                int score = temp.getOrDefault(s.name(), 0);
+                temp.put(s.name(), score + s.score());
+                 */
             }
         }
         List<Label> result = new ArrayList<>();
@@ -84,6 +88,10 @@ public class AnalyzeByMap {
                     score = s.score();
                 }
                 temp.put(s.name(), score);
+                 */
+                /*
+                int score = temp.getOrDefault(s.name(), 0);
+                temp.put(s.name(), score + s.score());
                  */
             }
         }
