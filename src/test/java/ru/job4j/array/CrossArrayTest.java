@@ -1,12 +1,11 @@
 package ru.job4j.array;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CrossArrayTest {
     @Test
@@ -17,7 +16,7 @@ public class CrossArrayTest {
                 new int[] {1, 3},
                 new int[] {2, 1}
         );
-        assertThat(out.toString(), is("1" + System.lineSeparator()));
+        assertThat(out.toString()).isEqualTo("1" + System.lineSeparator());
     }
 
     @Test
@@ -28,6 +27,6 @@ public class CrossArrayTest {
                 new int[] {1, 2},
                 new int[] {3, 4}
         );
-        assertThat(out.toString(), is(""));
+        assertThat(out.toString()).isEqualTo("");
     }
 }
