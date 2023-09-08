@@ -13,7 +13,7 @@ public class Task166 {
         System.out.println(buffer);
     }
 
-    private static boolean checkSumNotEvenDividers(int number ) {
+    private static boolean checkSumNotEvenDividers(int number) {
         int result = 0;
         for (int i = 1; i <= number; i++) {
             if (number % i == 0 && i % 2 != 0) {
