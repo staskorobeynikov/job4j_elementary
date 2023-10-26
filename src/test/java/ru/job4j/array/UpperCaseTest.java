@@ -6,26 +6,28 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UpperCaseTest {
     @Test
-    public void LettersLowerCaseWithDigits() {
+    public void lettersLowerCaseWithDigits() {
         char[] input = "alpha012".toCharArray();
         char[] expect = "ALPHA".toCharArray();
         assertArrayEquals(expect, UpperCase.onlyLowCase(input));
     }
 
     @Test
-    public void LettersLowerCaseWithDigitsWithSymbols() {
+    public void lettersLowerCaseWithDigitsWithSymbols() {
         char[] input = "alpha-12@?-".toCharArray();
         char[] expect = "ALPHA".toCharArray();
         assertArrayEquals(expect, UpperCase.onlyLowCase(input));
     }
+
     @Test
-    public void LettersLowerCaseAndOneUpperCaseDigitsSymbolsSpace() {
+    public void lettersLowerCaseAndOneUpperCaseDigitsSymbolsSpace() {
         char[] input = "aLpha - 1-0!@#$5".toCharArray();
         char[] expect = "APHA".toCharArray();
         assertArrayEquals(expect, UpperCase.onlyLowCase(input));
     }
+
     @Test
-    public void LettersLowerCaseAndTwoUpperCaseDigitsSpace() {
+    public void lettersLowerCaseAndTwoUpperCaseDigitsSpace() {
         char[] input = "aLpHa - 1".toCharArray();
         char[] expect = "APA".toCharArray();
         assertArrayEquals(expect, UpperCase.onlyLowCase(input));
