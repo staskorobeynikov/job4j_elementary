@@ -1,29 +1,34 @@
 package ru.job4j.condition;
 
+import java.util.StringJoiner;
+
 public class Task57 {
     private static final int SUM_OF_ANGLES = 180;
 
     private static final int RIGHT_ANGLE = 90;
 
     public static void triangleType(int a, int b) {
+        StringJoiner buffer = new StringJoiner(" ");
         int c = SUM_OF_ANGLES - a - b;
         if (a < RIGHT_ANGLE && b < RIGHT_ANGLE && c < RIGHT_ANGLE) {
-            System.out.println("Остроугольный");
+            buffer.add("Остроугольный");
+
         }
         if (a == RIGHT_ANGLE || b == RIGHT_ANGLE || c == RIGHT_ANGLE) {
-            System.out.println("Прямоугольный");
+            buffer.add("Прямоугольный");
         }
         if ((a > RIGHT_ANGLE || b > RIGHT_ANGLE || c > RIGHT_ANGLE) && c > 0) {
-            System.out.println("Тупоугольный");
+            buffer.add("Тупоугольный");
         }
         if (a == b || b == c || c == a) {
-            System.out.println("Равнобедренный");
+            buffer.add("Равнобедренный");
         }
         if (b == c && c == a) {
-            System.out.println("Равносторонний");
+            buffer.add("Равносторонний");
         }
         if (c < 0) {
-            System.out.println("Ошибка");
+            buffer.add("Ошибка");
         }
+        System.out.println(buffer);
     }
 }

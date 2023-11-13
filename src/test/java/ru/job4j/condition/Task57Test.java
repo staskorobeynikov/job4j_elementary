@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.StringJoiner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,10 +15,8 @@ class Task57Test {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         Task57.triangleType(90, 45);
-        StringJoiner expected = new StringJoiner(
-                System.lineSeparator(), "", System.lineSeparator())
-                .add("Прямоугольный").add("Равнобедренный");
-        assertThat(out.toString()).isEqualTo(expected.toString());
+        String expected = "Прямоугольный Равнобедренный" + ln;
+        assertThat(out.toString()).isEqualTo(expected);
     }
 
     @Test
@@ -27,10 +24,8 @@ class Task57Test {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         Task57.triangleType(45, 45);
-        StringJoiner expected = new StringJoiner(
-                System.lineSeparator(), "", System.lineSeparator())
-                .add("Прямоугольный").add("Равнобедренный");
-        assertThat(out.toString()).isEqualTo(expected.toString());
+        String expected = "Прямоугольный Равнобедренный" + ln;
+        assertThat(out.toString()).isEqualTo(expected);
     }
 
     @Test
@@ -92,10 +87,8 @@ class Task57Test {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         Task57.triangleType(60, 60);
-        StringJoiner expected = new StringJoiner(
-                System.lineSeparator(), "", System.lineSeparator())
-                .add("Остроугольный").add("Равнобедренный").add("Равносторонний");
-        assertThat(out.toString()).isEqualTo(expected.toString());
+        String expected = "Остроугольный Равнобедренный Равносторонний" + ln;
+        assertThat(out.toString()).isEqualTo(expected);
     }
 
     @Test
@@ -103,7 +96,7 @@ class Task57Test {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         Task57.triangleType(80, 50);
-        String expected = "Остроугольный" + ln + "Равнобедренный" + ln;
+        String expected = "Остроугольный Равнобедренный" + ln;
         assertThat(out.toString()).isEqualTo(expected);
     }
 
@@ -112,7 +105,7 @@ class Task57Test {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         Task57.triangleType(50, 50);
-        String expected = "Остроугольный" + ln + "Равнобедренный" + ln;
+        String expected = "Остроугольный Равнобедренный" + ln;
         assertThat(out.toString()).isEqualTo(expected);
     }
 
