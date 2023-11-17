@@ -24,16 +24,4 @@ public class LogicNot {
     public static boolean evenOrNotPositive(int num) {
         return isEven(num) || notPositive(num);
     }
-
-    public static void main(String[] args) {
-        System.out.println("3 check not even and positive: " + notEvenAndPositive(3));
-        System.out.println("-3 check not even and positive: " + notEvenAndPositive(-3));
-        System.out.println("2 check not even and positive: " + notEvenAndPositive(2));
-        System.out.println("-2 check not even and positive: " + notEvenAndPositive(-2));
-        System.out.println();
-        System.out.println("3 check even or not positive: " + evenOrNotPositive(3));
-        System.out.println("-3 check even or not positive: " + evenOrNotPositive(-3));
-        System.out.println("2 check even or not positive: " + evenOrNotPositive(2));
-        System.out.println("-2 check even or not positive: " + evenOrNotPositive(-2));
-    }
 }
