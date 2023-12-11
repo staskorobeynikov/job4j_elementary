@@ -1,22 +1,27 @@
 package ru.job4j.converter;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.withPrecision;
 
 public class ConverterTest {
     @Test
-    public void whenConvert140RblThen2Euro() {
-        int in = 140;
-        int expected = 2;
-        int out = Converter.rubleToEuro(in);
-        Assert.assertEquals(expected, out);
+    void whenConvert140RblThen2Euro() {
+        float input = 140;
+        float expected = 2;
+        float output = Converter.rubleToEuro(input);
+        float value = 0.0001f;
+        assertThat(output).isEqualTo(expected, withPrecision(value));
     }
 
     @Test
-    public void whenConvert180RblThen3Dlr() {
-        int in = 180;
-        int expected = 3;
-        int out = Converter.rubleToDollar(in);
-        Assert.assertEquals(expected, out);
+    void whenConvert180RblThen3Dollar() {
+        float input = 180;
+        float expected = 3;
+        float output = Converter.rubleToDollar(input);
+        float value = 0.0001f;
+        assertThat(output).isEqualTo(expected, withPrecision(value));
     }
 }
