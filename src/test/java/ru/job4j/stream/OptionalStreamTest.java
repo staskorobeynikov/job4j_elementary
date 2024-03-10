@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 import static ru.job4j.stream.OptionalStream.*;
+import static ru.job4j.stream.OptionalStream.User;
 
 public class OptionalStreamTest {
 

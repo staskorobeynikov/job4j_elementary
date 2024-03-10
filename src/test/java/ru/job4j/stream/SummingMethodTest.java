@@ -7,6 +7,7 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 import static ru.job4j.stream.SummingMethod.*;
+import static ru.job4j.stream.SummingMethod.User;
 
 public class SummingMethodTest {
 
