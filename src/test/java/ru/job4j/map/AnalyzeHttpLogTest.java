@@ -2,6 +2,7 @@ package ru.job4j.map;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,5 +29,17 @@ class AnalyzeHttpLogTest {
                 new AnalyzeHttpLog.Line("DEBUG", "[threads [zqfz [wbye [zfq]]] - 1]", "[cz] bxa")
         );
         assertThat(AnalyzeHttpLog.maxByThread(logs)).isEqualTo("[threads [qbxb [bbb]] - 1]");
+    }
+
+    @Test
+    public void whenDetailByThread() {
+        var logs = List.of(
+                new AnalyzeHttpLog.Line("ERROR","[threads [qbxb]]", "yaee ybze"),
+                new AnalyzeHttpLog.Line("ERROR","[threads [qbxb]]", "wyce"),
+                new AnalyzeHttpLog.Line("ERROR", "[threads [qbxb]]", "eaba yzd"),
+                new AnalyzeHttpLog.Line("DEBUG", "[threads [qbxb]]", "[cz] bxa")
+        );
+        assertThat(AnalyzeHttpLog.detailByThread(logs, "[threads [qbxb]]", List.of("ERROR", "DEBUG")))
+                .isEqualTo(new LinkedHashMap<>(Map.of("ERROR", 3L, "DEBUG", 1L)));
     }
 }

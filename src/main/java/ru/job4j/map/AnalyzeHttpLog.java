@@ -37,6 +37,11 @@ public class AnalyzeHttpLog {
 
     public static Map<String, Long> detailByThread(List<Line> logs, String thread,
                                                    List<String> orders) {
-        return Map.of();
+        Map<String, Long> result = new LinkedHashMap<>();
+        orders.forEach(string -> result.put(string, 0L));
+        logs.stream()
+                .filter(line -> line.thread.equals(thread))
+                .forEach(line -> result.computeIfPresent(line.level(), (key, value) -> value + 1));
+        return result;
     }
 }
