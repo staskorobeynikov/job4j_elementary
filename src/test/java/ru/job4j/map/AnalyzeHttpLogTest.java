@@ -34,8 +34,8 @@ class AnalyzeHttpLogTest {
     @Test
     public void whenDetailByThread() {
         var logs = List.of(
-                new AnalyzeHttpLog.Line("ERROR","[threads [qbxb]]", "yaee ybze"),
-                new AnalyzeHttpLog.Line("ERROR","[threads [qbxb]]", "wyce"),
+                new AnalyzeHttpLog.Line("ERROR", "[threads [qbxb]]", "yaee ybze"),
+                new AnalyzeHttpLog.Line("ERROR", "[threads [qbxb]]", "wyce"),
                 new AnalyzeHttpLog.Line("ERROR", "[threads [qbxb]]", "eaba yzd"),
                 new AnalyzeHttpLog.Line("DEBUG", "[threads [qbxb]]", "[cz] bxa")
         );
