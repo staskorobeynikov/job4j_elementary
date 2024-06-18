@@ -50,6 +50,7 @@ public class OptionalFilter {
     public static List<Child> defineChildren(List<Worker> workers, String passport) {
         return findByPassport(workers, passport)
                 .stream()
+                .filter(w -> w.getChildren().size() > 2)
                 .flatMap(w -> w.getChildren().stream())
                 .filter(child -> child.getAge() < 15)
                 .collect(Collectors.toList());
