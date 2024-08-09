@@ -28,29 +28,7 @@ public class AnalyzeByMap {
     }
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
-        Map<String, Integer> temp = new LinkedHashMap<>();
-        for (Pupil p : pupils) {
-            for (Subject s : p.subjects()) {
-                temp.merge(s.name(), s.score(), Integer::sum);
-                /*
-                temp.computeIfPresent(s.name(), (key, value) -> value + s.score());
-                temp.putIfAbsent(s.name(), s.score());
-                 */
-                /*
-                Integer score = temp.get(s.name());
-                if (score != null) {
-                    score += s.score();
-                } else {
-                    score = s.score();
-                }
-                temp.put(s.name(), score);
-                 */
-                /*
-                int score = temp.getOrDefault(s.name(), 0);
-                temp.put(s.name(), score + s.score());
-                 */
-            }
-        }
+        Map<String, Integer> temp = createTempMap(pupils);
         List<Label> result = new ArrayList<>();
         for (Map.Entry<String, Integer> e : temp.entrySet()) {
             result.add(new Label(e.getKey(), e.getValue() / pupils.size()));
@@ -72,6 +50,16 @@ public class AnalyzeByMap {
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
+        Map<String, Integer> temp = createTempMap(pupils);
+        List<Label> result = new ArrayList<>();
+        for (Map.Entry<String, Integer> e : temp.entrySet()) {
+            result.add(new Label(e.getKey(), e.getValue()));
+        }
+        result.sort(Comparator.naturalOrder());
+        return result.get(result.size() - 1);
+    }
+
+    private static Map<String, Integer> createTempMap(List<Pupil> pupils) {
         Map<String, Integer> temp = new LinkedHashMap<>();
         for (Pupil p : pupils) {
             for (Subject s : p.subjects()) {
@@ -79,7 +67,7 @@ public class AnalyzeByMap {
                 /*
                 temp.computeIfPresent(s.name(), (key, value) -> value + s.score());
                 temp.putIfAbsent(s.name(), s.score());
-                */
+                 */
                 /*
                 Integer score = temp.get(s.name());
                 if (score != null) {
@@ -95,11 +83,6 @@ public class AnalyzeByMap {
                  */
             }
         }
-        List<Label> result = new ArrayList<>();
-        for (Map.Entry<String, Integer> e : temp.entrySet()) {
-            result.add(new Label(e.getKey(), e.getValue()));
-        }
-        result.sort(Comparator.naturalOrder());
-        return result.get(result.size() - 1);
+        return temp;
     }
 }
