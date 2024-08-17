@@ -20,6 +20,15 @@ class Task20Test {
     }
 
     @Test
+    public void when112ThenNo() {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        Task20.numCheck(112);
+        String expected = "Нет" + ln;
+        assertThat(out.toString()).isEqualTo(expected);
+    }
+
+    @Test
     public void when212ThenNo() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));

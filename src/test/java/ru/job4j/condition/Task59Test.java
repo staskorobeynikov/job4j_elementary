@@ -54,4 +54,13 @@ class Task59Test {
         String expected = "Бесконечное множество" + ln;
         assertThat(out.toString()).isEqualTo(expected);
     }
+
+    @Test
+    public void when8And0Then0() {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        Task59.getLinearEquation(8, 0);
+        String expected = "0" + ln;
+        assertThat(out.toString()).isEqualTo(expected);
+    }
 }
