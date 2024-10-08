@@ -22,13 +22,13 @@ public class Machine {
         int[] rsl = new int[100];
         int size = 0;
         int k = 0;
-        int delta = money - price;
-        while (delta > 0) {
-            if (coins[k] > delta) {
+        money -= price;
+        while (money > 0) {
+            if (coins[k] > money) {
                 k++;
             } else {
                 rsl[size++] = coins[k];
-                delta -= coins[k];
+                money -= coins[k];
             }
         }
         return Arrays.copyOf(rsl, size);
