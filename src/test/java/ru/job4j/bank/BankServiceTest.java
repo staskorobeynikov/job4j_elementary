@@ -121,6 +121,17 @@ class BankServiceTest {
     }
 
     @Test
+    void transferMoneyDontHaveEnoughMoneyThenFalse() {
+        User user = new User("3434", "Petr Arsentev");
+        BankService bank = new BankService();
+        bank.addUser(user);
+        bank.addAccount(user.getPassport(), new Account("5546", 150D));
+        bank.addAccount(user.getPassport(), new Account("113", 50D));
+        boolean b = bank.transferMoney(user.getPassport(), "5546", user.getPassport(), "113", 300D);
+        assertThat(b).isFalse();
+    }
+
+    @Test
     void transferMoneyDestinationIsNull() {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();
