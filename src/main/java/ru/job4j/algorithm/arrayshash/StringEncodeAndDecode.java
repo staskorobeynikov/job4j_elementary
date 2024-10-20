@@ -1,4 +1,4 @@
-package ru.job4j.algorithm;
+package ru.job4j.algorithm.arrayshash;
 
 import java.util.ArrayList;
 import java.util.List;

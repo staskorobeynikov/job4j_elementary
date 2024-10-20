@@ -1,4 +1,4 @@
-package ru.job4j.algorithm;
+package ru.job4j.algorithm.sliding;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,6 +1,7 @@
-package ru.job4j.algorithm;
+package ru.job4j.algorithm.arrayshash;
 
 import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
