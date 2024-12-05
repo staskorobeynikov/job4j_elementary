@@ -48,7 +48,9 @@ public class StringCompressionTest {
     @Test
     void testLargeRepetition() {
         char[] input = new char[12];
-        for (int i = 0; i < 12; i++) input[i] = 'a';
+        for (int i = 0; i < 12; i++) {
+            input[i] = 'a';
+        }
         int length = StringCompression.compress(input);
         assertEquals(3, length, "Compressed length for 12 'a' characters should be 3");
         assertArrayEquals(new char[]{'a', '1', '2'}, copyOf(input, length));
