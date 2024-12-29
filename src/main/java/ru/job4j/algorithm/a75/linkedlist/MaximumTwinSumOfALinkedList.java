@@ -1,4 +1,4 @@
-package ru.job4j.algorithm.linkedlist;
+package ru.job4j.algorithm.a75.linkedlist;
 
 public class MaximumTwinSumOfALinkedList {
     public class ListNode {
@@ -32,7 +32,7 @@ public class MaximumTwinSumOfALinkedList {
         return result;
     }
 
-    public ListNode reverseList(ListNode head) {
+    private ListNode reverseList(ListNode head) {
         ListNode previous = null;
         ListNode current = head;
         while (current != null) {
@@ -44,7 +44,7 @@ public class MaximumTwinSumOfALinkedList {
         return previous;
     }
 
-    public ListNode middleNode(ListNode head) {
+    private ListNode middleNode(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
         while (fast != null && fast.next != null) {
