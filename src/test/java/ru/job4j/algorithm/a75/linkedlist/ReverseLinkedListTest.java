@@ -46,7 +46,9 @@ class ReverseLinkedListTest {
     }
 
     private int[] toArray(ReverseLinkedList.ListNode head) {
-        if (head == null) return new int[0];
+        if (head == null) {
+            return new int[0];
+        }
         java.util.List<Integer> list = new java.util.ArrayList<>();
         while (head != null) {
             list.add(head.val);

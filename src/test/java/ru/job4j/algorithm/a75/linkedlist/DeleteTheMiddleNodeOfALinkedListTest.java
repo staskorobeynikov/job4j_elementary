@@ -55,7 +55,9 @@ public class DeleteTheMiddleNodeOfALinkedListTest {
     }
 
     private int[] toArray(DeleteTheMiddleNodeOfALinkedList.ListNode head) {
-        if (head == null) return new int[0];
+        if (head == null) {
+            return new int[0];
+        }
         java.util.List<Integer> list = new java.util.ArrayList<>();
         while (head != null) {
             list.add(head.val);

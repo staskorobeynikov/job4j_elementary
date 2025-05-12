@@ -62,7 +62,9 @@ class OddEvenLinkedListTest {
     }
 
     private int[] toArray(OddEvenLinkedList.ListNode head) {
-        if (head == null) return new int[0];
+        if (head == null) {
+            return new int[0];
+        }
         java.util.List<Integer> list = new java.util.ArrayList<>();
         while (head != null) {
             list.add(head.val);

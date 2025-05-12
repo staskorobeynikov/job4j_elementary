@@ -27,7 +27,9 @@ class MeanOfArrayAfterRemovingSomeElementsTest {
     void testAllDifferentValues() {
         MeanOfArrayAfterRemovingSomeElements solver = new MeanOfArrayAfterRemovingSomeElements();
         int[] arr = new int[20];
-        for (int i = 0; i < 20; i++) arr[i] = i + 1;
+        for (int i = 0; i < 20; i++) {
+            arr[i] = i + 1;
+        }
         assertEquals(10.5, solver.trimMean(arr), 1e-6, "Expected mean of numbers 2 to 19.");
     }
 
@@ -35,7 +37,9 @@ class MeanOfArrayAfterRemovingSomeElementsTest {
     void testLargeArray() {
         MeanOfArrayAfterRemovingSomeElements solver = new MeanOfArrayAfterRemovingSomeElements();
         int[] arr = new int[100];
-        for (int i = 0; i < 100; i++) arr[i] = i + 1;
+        for (int i = 0; i < 100; i++) {
+            arr[i] = i + 1;
+        }
         assertEquals(50.5, solver.trimMean(arr), 1e-6, "Expected mean of numbers 6 to 95.");
     }
 
@@ -50,7 +54,9 @@ class MeanOfArrayAfterRemovingSomeElementsTest {
     void testPrecisionHandling() {
         MeanOfArrayAfterRemovingSomeElements solver = new MeanOfArrayAfterRemovingSomeElements();
         int[] arr = new int[20];
-        for (int i = 0; i < 20; i++) arr[i] = 1000000 + i;
+        for (int i = 0; i < 20; i++) {
+            arr[i] = 1000000 + i;
+        }
         assertEquals(1000009.5, solver.trimMean(arr), 1e-6, "Expected precise trimmed mean.");
     }
 }
